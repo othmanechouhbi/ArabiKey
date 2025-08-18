@@ -1,0 +1,110 @@
+:root{
+  --kb-bg: #ffffff;
+  --kb-border: #d0d0d0;
+  --kb-key-bg: #fafafa;
+  --kb-key-border: #dcdcdc;
+  --kb-text: #111;
+  --kb-accent: #2b7cff;
+  --kb-radius: 12px;
+  --kb-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  --kb-font: "Noto Naskh Arabic", "Noto Sans Arabic", "Segoe UI", "Arial", "Tahoma", sans-serif;
+}
+
+/* Dark theme variables */
+.arabic-kb--dark {
+  --kb-bg: #0f1720;
+  --kb-border: #1f2a36;
+  --kb-key-bg: #111827;
+  --kb-key-border: #24323f;
+  --kb-text: #e6eef8;
+  --kb-accent: #58a6ff;
+  --kb-shadow: 0 10px 25px rgba(2,6,23,0.6);
+}
+
+/* Container */
+#arabic-keyboard-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 600px;
+  max-width: calc(100% - 24px);
+  height: 260px;
+  border-radius: var(--kb-radius);
+  background: var(--kb-bg);
+  border: 1px solid var(--kb-border);
+  box-shadow: var(--kb-shadow);
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--kb-font);
+  color: var(--kb-text);
+  transition: transform 160ms ease, opacity 160ms ease;
+  user-select: none;
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+/* Header */
+#arabic-keyboard-container .arabic-kb__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  gap: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-bottom: 1px solid var(--kb-border);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Grid and keys */
+.arabic-kb__body { padding: 10px; display: grid; gap: 8px; flex:1; overflow:auto; }
+.arabic-kb__grid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: stretch;
+  direction: rtl;
+}
+
+/* Key style using CSS variables (so JS can set them) */
+.arabic-kb__key {
+  background: var(--kb-key-bg);
+  border: 1px solid var(--kb-key-border);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
+  transition: transform 80ms ease, background-color 120ms ease, box-shadow 120ms ease;
+  white-space: nowrap;
+  line-height: 1;
+  font-family: var(--kb-font);
+  text-align: center;
+  color: var(--kb-text);
+}
+.arabic-kb__key:active { transform: translateY(1px) scale(0.995); }
+.arabic-kb__key--wide { grid-column: span 2; }
+.arabic-kb__key--space { grid-column: span 4; }
+
+.arabic-kb--size-small .arabic-kb__key { padding: 6px; font-size: 14px; border-radius:6px; }
+.arabic-kb--size-large .arabic-kb__key { padding: 14px; font-size: 20px; border-radius:10px; }
+
+.arabic-kb__sub { font-size: 11px; color: rgba(0,0,0,0.5); display:block; margin-top:4px; }
+.arabic-kb--dark .arabic-kb__sub { color: rgba(255,255,255,0.55); }
+
+.arabic-kb--compact .arabic-kb__grid { gap: 4px; }
+.arabic-kb--translucent { backdrop-filter: blur(6px); }
+
+.arabic-kb__key:hover { box-shadow: 0 6px 12px rgba(0,0,0,0.08); }
+.arabic-kb__key:focus { outline: 2px solid var(--kb-accent); }
+
+@media (max-width: 560px) {
+  #arabic-keyboard-container { width: calc(100% - 18px); right: 9px; left: 9px; bottom: 14px; height: 320px; }
+  .arabic-kb__grid { grid-template-columns: repeat(10, 1fr); }
+}
+
+.arabic-kb__footer { padding: 8px; border-top: 1px solid var(--kb-border); display:flex; justify-content:space-between; font-size:12px; gap:8px; }

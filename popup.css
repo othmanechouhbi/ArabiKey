@@ -1,0 +1,180 @@
+:root{
+  --bg: #ffffff;
+  --surface: #f7f9fb;
+  --muted: #6b7280;
+  --text: #0f1720;
+  --accent: #2563eb;
+  --accent-contrast: #fff;
+  --border: #e6e9ee;
+  --radius: 10px;
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --control-height: 36px;
+  --gap: 10px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-synthesis: none;
+}
+
+/* Container */
+body {
+  margin: 0;
+  padding: 14px;
+  background: linear-gradient(180deg, var(--bg), var(--surface));
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+/* Card-like look */
+body > :first-child {
+  margin-bottom: 8px;
+}
+
+/* Headings */
+h2 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Labels and form rows */
+label {
+  display: block;
+  font-size: 13px;
+  margin-top: 8px;
+  color: var(--text);
+}
+.row {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+/* Controls */
+select, input[type="number"], input[type="range"], textarea, input[type="color"] {
+  width: 100%;
+  box-sizing: border-box;
+  height: var(--control-height);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 13px;
+  color: var(--text);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: box-shadow .12s linear, border-color .12s linear;
+}
+
+/* Range and number spacing */
+input[type="range"] { height: 28px; padding: 0; }
+input[type="number"] { padding: 6px 8px; }
+
+/* Textarea */
+textarea {
+  min-height: 72px;
+  max-height: 220px;
+  resize: vertical;
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 8px;
+  line-height: 1.35;
+}
+
+/* Small helper text */
+.small { font-size: 12px; color: var(--muted); margin-top:4px; }
+
+/* Buttons */
+button {
+  appearance: none;
+  border: 0;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: var(--shadow);
+  transition: transform .06s ease, box-shadow .12s ease, opacity .12s ease;
+}
+button:hover { transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+/* Checkbox row styling */
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Compact layout for small windows */
+@media (max-width: 360px) {
+  body { padding: 10px; min-width: 260px; }
+  button { width: 100%; }
+  .row { flex-direction: column; align-items: stretch; }
+}
+
+/* Focus states for accessibility */
+select:focus, input:focus, textarea:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  border-color: rgba(37,99,235,0.6);
+}
+
+/* Visual grouping for related controls */
+.group {
+  background: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+/* Lightweight helper to dim controls */
+.dim { opacity: 0.65; }
+
+/* Hover for labels that act clickable */
+label.clickable { cursor: pointer; color: var(--accent); }
+
+/* Minor adjustments for inputs that are displayed inline */
+.inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* High contrast tweaks for dark mode (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --surface: #071024;
+    --muted: #9aa4b2;
+    --text: #e6eef8;
+    --accent: #58a6ff;
+    --accent-contrast: #061224;
+    --border: #15202b;
+    --shadow: 0 6px 18px rgba(2,6,23,0.7);
+  }
+  select, input[type="number"], textarea, input[type="range"] {
+    background: linear-gradient(180deg, #071226, #091426);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  button { box-shadow: none; }
+}
