@@ -19,7 +19,7 @@ With customization options to make typing in Arabic smooth and enjoyable.
 ## 📦 Installation
 1. Download or clone this repo.
    ```bash
-   git clone https://github.com/othmanechouhbi/ArabiKey.git
+   https://github.com/othmanechouhbi/ArabiKey.git
 Open Chrome → go to chrome://extensions/.
 
 Enable Developer mode (top right).
