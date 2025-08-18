@@ -20,30 +20,30 @@ With customization options to make typing in Arabic smooth and enjoyable.
 1. Download or clone this repo.
    ```bash
    https://github.com/othmanechouhbi/ArabiKey.git
-Open Chrome → go to chrome://extensions/.
+2. Open Chrome → go to chrome://extensions/.
 
-Enable Developer mode (top right).
+3. Enable Developer mode (top right).
 
-Click Load unpacked → select the ArabiKey folder.
+4. Click Load unpacked → select the ArabiKey folder.
 
-Done! 🎉
+5. Done! 🎉
 
-🔧 Usage
+## 🔧 Usage
 
-Just click the action button to toggle the Arabic keyboard.
+- Just click the action button to toggle the Arabic keyboard.
 
-Customize settings from the extension’s panel.
+- Customize settings from the extension’s panel.
 
-🌍 Roadmap
+## 🌍 Roadmap
 
- Add more themes
+- 🟢 Add more themes
 
- Add support for Firefox
+- 🟢 Add support for Firefox
 
- Save custom user preferences
+- 🟢 Save custom user preferences
 
-👨‍💻 Author
+## 👨‍💻 Author
 
-Developed with ❤️ by othmanechouhbi
+Developed with ❤️ in Morocco by othmanechouhbi
 If you like this project, consider supporting me 👇
 https://github.com/sponsors/othmanechouhbi
