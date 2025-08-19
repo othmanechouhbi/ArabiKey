@@ -17,7 +17,7 @@ With customization options to make typing in Arabic smooth and enjoyable.
 ---
 
 ## 📦 Installation
-1. Download or clone this repo.
+1. Visit the link above and ensure you download the ZIP file of the code by clicking the green "Code" button.
    ```bash
    https://github.com/othmanechouhbi/ArabiKey.git
 2. Open Chrome → go to chrome://extensions/.
